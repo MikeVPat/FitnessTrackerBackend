@@ -1,7 +1,45 @@
+const client = require("./client");
+
+const {
+    createUser,
+    getUser,
+    getUserById,
+    getUserByUsername
+} = require("./users");
+
+const {
+    getActivityById,
+    createActivity,
+    getAllActivities,
+    updateActivity
+} = require("./activities");
+
+const {
+    createRoutine,
+    getRoutinesWithoutActivities,
+    getAllRoutines,
+    updateRoutine,
+    getRoutineById,
+    destroyRoutine,
+    getAllPublicRoutines,
+    getAllRoutinesByUser,
+    getPublicRoutinesByUser,
+    getPublicRoutinesByActivity
+} = require("./routines")
+
+const {
+    getRoutineActivityById,
+    addActivityToRoutine,
+    updateRoutineActivity,
+    destroyRoutineActivity,
+    getRoutineActivitiesByRoutine
+} = require("./routine_activities")
+
+
 module.exports = {
-  // ...require('./client'), // adds key/values from users.js
-  ...require('./users'), // adds key/values from users.js
-  ...require('./activities'), // adds key/values from activites.js
-  ...require('./routines'), // etc
-  ...require('./routine_activities') // etc
+    client,
+   ...require("./users"),
+   ...require("./activities"),
+   ...require("./routines"),
+   ...require("./routine_activities")
 }
